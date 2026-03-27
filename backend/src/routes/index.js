@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const router = Router();
+const tasksRoute = require("./tasks.route");
 
 router.get("/health", (req, res) => {
     res.status(200).json({
@@ -8,5 +9,6 @@ router.get("/health", (req, res) => {
     });
 });
 
+router.use("/tasks", tasksRoute);
 
 module.exports = router;
